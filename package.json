@@ -4,22 +4,9 @@
   "description": "Your project description",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-}
-{
-  "scripts": {
-    "build": "your build command here"
-  },
-  
-}
-
-  {
-  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
-}
-
   "keywords": [
     "GCP",
     "Access",
@@ -27,7 +14,4 @@
   ],
   "author": "Your Name",
   "license": "MIT"
-  
 }
-
-
