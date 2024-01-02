@@ -2,3 +2,21 @@ cd /home/runner/work/gcp-access-request/gcp-access-request/
 npm init -y
 npm install -g npm@latest
 npm cache clean --force
+
+{
+  "name": "gcp-access-request",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "GCP",
+    "Access",
+    "Request"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
+
