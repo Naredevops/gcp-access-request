@@ -11,7 +11,6 @@ npm install @babel/core --save-dev
 npm install @babel/preset-env --save-dev
 npm install --save-dev @babel/core @babel/preset-env babel-loader
 npm install --save-dev
-node createFiles.js
 npm run build
 rm -rf node_modules
 npm install
