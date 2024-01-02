@@ -1,0 +1,4 @@
+cd /home/runner/work/gcp-access-request/gcp-access-request/
+npm init -y
+npm install -g npm@latest
+npm cache clean --force
