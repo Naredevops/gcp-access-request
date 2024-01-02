@@ -1,5 +1,4 @@
 module.exports = {
-  mode: 'development', // or 'production'
-  entry: './src/index.js', // Adjust this to your actual entry file
-  // ... other webpack configuration options
+  entry: './src/index.js', // or the path to your actual entry file
+  // other webpack configurations...
 };
