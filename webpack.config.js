@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: {'bundle.js'};
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -11,7 +11,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: 'babel-loader';
+        use: 'babel-loader',
       },
     ],
   },
