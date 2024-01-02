@@ -13,5 +13,8 @@
   ],
   "author": "Your Name",
   "license": "MIT"
-  ... other properties
+  
 }
+cd /home/runner/work/gcp-access-request/gcp-access-request/
+npm run build
+
