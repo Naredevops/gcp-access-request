@@ -13,23 +13,5 @@
   ],
   "author": "Your Name",
   "license": "MIT"
-}
-
-{
-  "scripts": {
-    "build": "your build command here"
-  }
-  // ... other package.json properties
-}
-{
-  "scripts": {
-    "build": "webpack"
-  }
-  // ... other package.json properties
-}
-{
-  "scripts": {
-    "build": "echo 'Running build script'"
-  }
-  // ... other package.json properties
+  // ... other properties
 }
