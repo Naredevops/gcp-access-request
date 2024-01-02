@@ -15,7 +15,10 @@ node createFiles.js
 npm run build
 rm -rf node_modules
 npm install
+npm install babel-loader@latest --save-dev
 npm run build
+npm update
+
 
 
 
