@@ -1,4 +1,4 @@
 /project-root
   |- src
-     |- index.js
+     |- ./src/index.js
   |- other project files...
