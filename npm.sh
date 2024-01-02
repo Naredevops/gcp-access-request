@@ -7,6 +7,7 @@ npm install webpack@latest webpack-cli@latest --save-dev
 npm install --save-dev babel-loader
 npm install --save-dev @babel/core
 npm install @babel/core --save-dev
+npm install @babel/preset-env --save-dev
 cd /home/runner/work/gcp-access-request/gcp-access-request
 npm install --save-dev
 npm run build
