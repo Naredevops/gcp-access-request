@@ -1,3 +1,3 @@
 mkdir src
-touch src/index.js
+touch src/index.js;
 
