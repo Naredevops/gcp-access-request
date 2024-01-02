@@ -1,7 +1,11 @@
-module.exports = {
-  entry: './src/index.js', // or the path to your actual entry file
-  // other webpack configurations...
-};
-console.log('Current directory content:', __dirname);
-console.log('Webpack configuration:', module.exports);
+// webpack.config.js
+const path = require('path');
 
+module.exports = {
+  mode: 'development', // or 'production'
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+};
