@@ -8,6 +8,7 @@
     "build": "webpack --mode=development"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "babel-loader": "^8.2.3"
     
   },
