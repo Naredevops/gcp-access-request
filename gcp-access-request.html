@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCP Access Request</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #add8e6; /* Light blue background color */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #highlightedText {
+            color: #4b0082;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4b0082;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        button {
+            background-color: #4b0082;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2d004d;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="highlightedText">GCP Access Request Form 🚀</h1>
+
+    <form id="accessRequestForm">
+        <div>
+            <label for="projectId">GCP Project ID 🌐:</label>
+            <input type="text" id="projectId" name="projectId" required>
+        </div>
+
+        <div>
+            <label for="username">GCP Username 🧑‍💻:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div>
+            <label for="role">Role 🛡️:</label>
+            <select id="role" name="role" required>
+                <option value="roles/viewer">Viewer 👀</option>
+                <option value="roles/editor">Editor ✍️</option>
+                <option value="roles/owner">Owner 👑</option>
+                <!-- Add more roles based on your GCP IAM roles -->
+            </select>
+        </div>
+
+        <div>
+            <label for="technicalLeadId">Technical Lead ID 🤖:</label>
+            <input type="text" id="technicalLeadId" name="technicalLeadId" required>
+        </div>
+
+        <div>
+            <label for="technicalLeadApproval">Technical Lead Approval 🌟:</label>
+            <select id="technicalLeadApproval" name="technicalLeadApproval" required>
+                <option value="" disabled selected>Select Technical Lead Approval</option>
+                <option value="Approved">★ Approved</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+        </div>
+
+        <!-- Manager Approval Section -->
+        <div>
+            <label for="managerId">Manager ID 👨‍💼:</label>
+            <input type="text" id="managerId" name="managerId" required>
+        </div>
+
+        <div>
+            <label for="managerApproval">Manager Approval 🌟(Need to be approved by manager):</label>
+            <select id="managerApproval" name="managerApproval" required>
+                <option value="" disabled selected>Select Manager Approval</option>
+                <option value="Approved">★ Approved</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+        </div>
+        <!-- End Manager Approval Section -->
+
+        <button type="button" onclick="raiseAccessRequest()">Submit Request 🚀</button>
+    </form>
+
+    <script>
+        function raiseAccessRequest() {
+            var form = document.getElementById("accessRequestForm");
+            var formData = [];
+
+            // Loop through form elements and push them to formData array
+            for (var i = 0; i < form.elements.length; i++) {
+                var element = form.elements[i];
+                // Exclude buttons and non-input elements
+                if (element.type !== "button" && element.tagName !== "BUTTON") {
+                    formData.push({
+                        name: element.name,
+                        value: element.value
+                    });
+                }
+            }
+
+            // Assuming you have a server-side endpoint that handles the access request
+            // This endpoint should securely handle GCP IAM policy updates
+
+            // Example: Using fetch to make a request to your server-side endpoint
+            fetch('/api/raiseGCPAccessRequest', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the server's response
+                console.log(data);
+                alert('Access request submitted successfully! 🎉');
+            })
+            .catch(error => {
+                // Handle errors
+                console.error('There was a problem with the fetch operation:', error);
+                alert('Failed to submit access request. Please try again. 🚫');
+            });
+        }
+    </script>
+
+</body>
+</html>
