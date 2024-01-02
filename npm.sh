@@ -9,6 +9,9 @@ npm install --save-dev @babel/core
 cd /home/runner/work/gcp-access-request/gcp-access-request
 npm install --save-dev
 npm run build
+rm -rf node_modules
+npm install
+
 
 
 
