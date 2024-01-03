@@ -1,0 +1,52 @@
+name: Merge Pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - feature-branch
+
+jobs:
+  merge-and-generate-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Merge branches
+        run: |
+          git config --global user.name "Naren"
+          git config --global user.email "narender6t9.devops@gmail.com"
+          git fetch origin poc:poc
+          git merge --no-ff --no-commit origin/feature-branch || echo "Merge conflict"
+
+      - name: Handle merge conflicts
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No merge conflicts. Continue with the merge."
+            git commit -m "Merge branches"
+            git push
+          else
+            echo "Merge conflict detected. Resolve conflicts and commit."
+            # You can add steps here to resolve conflicts manually or using a script
+            # For simplicity, we'll just print a message in this example
+            echo "Conflict resolution required. Please resolve conflicts and commit."
+            exit 1
+          fi
+
+      - name: Generate CSV
+        run: |
+          # Your script/command to generate the CSV file
+          # Example:
+          echo "Name, Age" > output.csv
+          echo "John, 25" >> output.csv
+          echo "Jane, 30" >> output.csv
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@users.noreply.github.com"
+          git add .
+          git commit -m "Merge branches and generate CSV"
+          git push
