@@ -25,3 +25,6 @@ jobs:
 
       - name: Run access request script
         run: python handle_request.py
+        - name: List files in the current directory
+  run: ls
+
