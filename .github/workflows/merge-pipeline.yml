@@ -16,9 +16,9 @@ jobs:
 
       - name: Merge branches
         run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@users.noreply.github.com"
-          git fetch origin main:main
+          git config --global user.name "Naren"
+          git config --global user.email "narender6t9.devops@gmail.com"
+          git fetch origin poc:poc
           git merge --no-ff --no-commit origin/feature-branch || echo "Merge conflict"
 
       - name: Handle merge conflicts
