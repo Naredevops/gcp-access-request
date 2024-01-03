@@ -3,8 +3,8 @@ name: Merge Pipeline
 on:
   push:
     branches:
-      - main
       - poc
+      
 
 jobs:
   merge-and-generate-csv:
