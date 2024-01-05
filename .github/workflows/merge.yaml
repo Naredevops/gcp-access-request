@@ -1,4 +1,4 @@
-- name: Handle merge conflicts
+- name: Handle merge conflicts 
   run: |
     if [ -z "$(git status --porcelain)" ]; then
       echo "No merge conflicts. Continue with the merge."
