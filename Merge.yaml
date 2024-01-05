@@ -1,16 +1,28 @@
-- name: Handle merge conflicts
-  run: |
-    if [ -z "$(git status --porcelain)" ]; then
-      echo "No merge conflicts. Continue with the merge."
-      git commit -m "Merge branches"
-      git push
-    else
-      echo "Merge conflict detected. Resolve conflicts and commit."
-      # You can add steps here to resolve conflicts manually or using a script
-      # For simplicity, we'll just print a message in this example
-      echo "Conflict resolution required. Please resolve conflicts and commit."
-    fi
+name: Merge branches
+
+on:
+  push:
+    branches:
+      - poc
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Merge branches
+      run: |
+        git config user.name "Your GitHub Username"
+        git config user.email "your.email@example.com"
+
+        git merge --no-ff main -m "Merge 'main' into 'poc'"
+        git push
+
     - name: Print Merge Commit Details
-  run: |
-    git log -1
+      run: |
+        git log -1
+
 
