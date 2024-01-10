@@ -1,0 +1,7 @@
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '<Your Service Connection>'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az aks create --resource-group <ResourceGroup> --name <AKSClusterName> --node-count <NodeCount> --enable-addons monitoring --generate-ssh-keys
